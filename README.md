@@ -8,31 +8,44 @@ NovaStream es un servidor multimedia personal para organizar y reproducir tus pe
 
 ## Elige tu descarga
 
-| Sistema | Archivo de la release | Requisitos |
-| --- | --- | --- |
-| [macOS](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-macOS-universal.zip` | macOS 13.5 o posterior con Apple Silicon. Para Mac con Intel, usa la [0.3.9](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/tag/v0.3.9), su última versión. |
-| [Windows](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-Windows-x64.zip` | Windows 11 en un equipo x64 con procesador Intel o AMD. Edición preliminar. |
+Descarga el instalador de tu sistema. Instala dos apps:
 
-Para una instalación nueva de macOS, usa **macOS-universal**. La variante **macOS-project-universal** se publica para instalaciones existentes que arrancan desde un proyecto local con su propio archivo `.env`.
+- **NovaStream Server**: el servidor. Organiza tus películas, series, música y fotos y las comparte con tus dispositivos.
+- **NovaStream Player**: la app para ver tu biblioteca sin navegador, en el mismo equipo o en otro.
+
+| Sistema | Instalador | Requisitos |
+| --- | --- | --- |
+| [macOS](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-macOS.pkg` | Mac con Apple Silicon y macOS 13.5 o posterior. Para Mac con Intel, usa la [0.3.9](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/tag/v0.3.9), su última versión. |
+| [Windows](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-Windows-Setup.exe` | Windows 11 en un equipo x64 con procesador Intel o AMD. |
+
+Los archivos ZIP de cada release los usan las actualizaciones automáticas; no hace falta descargarlos.
 
 ## Instalar
 
-1. Extrae el ZIP de tu sistema. En Windows, mantén `runtime` junto a `NovaStream.exe`.
-2. Abre **NovaStream** y busca su icono en la barra de menús de macOS o en la bandeja de Windows.
-3. Elige **Abrir en navegador** o **Abrir como app**. El segundo modo usa Chrome o Chromium en macOS y Edge, Chrome o Chromium en Windows.
-4. Crea tu cuenta de administrador y añade tus carpetas en **Administración → Bibliotecas**. Puedes explorar carpetas del servidor o pegar sus rutas.
+1. Abre el instalador y sigue los pasos.
+   - **Mac:** instala NovaStream Server y NovaStream Player en Aplicaciones. Te pedirá la contraseña del Mac.
+   - **Windows:** elige qué instalar. Se instala en tu usuario, sin permisos de administrador, con accesos en el menú Inicio. Si aparece «Windows protegió su PC», pulsa «Más información» y «Ejecutar de todas formas».
+2. Abre **NovaStream Server**, busca su icono en la barra de menús de macOS o junto al reloj en Windows y crea tu cuenta de administrador.
+3. Añade tus carpetas en **Administración → Bibliotecas**. Puedes explorar carpetas del servidor o pegar sus rutas.
+4. Abre **NovaStream Player** para ver tu biblioteca. En el equipo del servidor, **Abrir como app** lo abre ya conectado. En otro equipo, escribe la dirección que aparece en **Administración → General → Acceso desde la red local** e inicia sesión.
 
-La app incluye el entorno del servidor. Si faltan FFmpeg y FFprobe, el primer arranque descarga y verifica su paquete. Cuando el servidor esté listo, puedes abrir la dirección local desde el menú.
+Si faltan FFmpeg y FFprobe, el primer arranque del servidor descarga y verifica su paquete.
 
-### Si macOS no deja abrir NovaStream
+### Si macOS no deja abrir el instalador o las apps
 
-NovaStream no está notarizado por Apple. Al abrirlo por primera vez, macOS puede decir que la app «está dañada» o que «no se puede verificar el desarrollador». Para quitarle la cuarentena, abre **Terminal** y ejecuta este comando, cambiando la ruta por la de tu `NovaStream.app`:
+NovaStream no está notarizado por Apple. Si macOS no deja abrir el instalador, ve a **Ajustes del Sistema → Privacidad y seguridad** y pulsa **Abrir igualmente**. También puedes quitarle la cuarentena desde **Terminal**:
 
 ```sh
-xattr -dr com.apple.quarantine /Applications/NovaStream.app
+xattr -d com.apple.quarantine ~/Downloads/NovaStream-*-macOS.pkg
 ```
 
-Si no sabes la ruta, escribe `xattr -dr com.apple.quarantine ` (con un espacio al final), arrastra `NovaStream.app` a la ventana de Terminal y pulsa Intro. Después vuelve a abrir NovaStream.
+Si una app dice que «está dañada», quítale la cuarentena igual, cambiando la ruta por la de la app:
+
+```sh
+xattr -dr com.apple.quarantine "/Applications/NovaStream Server.app"
+```
+
+Si no sabes la ruta, escribe `xattr -dr com.apple.quarantine ` (con un espacio al final), arrastra el archivo a la ventana de Terminal y pulsa Intro.
 
 ## Qué incluye
 
@@ -45,9 +58,9 @@ Los códecs H.264, HEVC y AV1 y la reproducción a 2160p dependen de las capacid
 
 ## Actualizar
 
-Desde la **0.3.9**, abre **Buscar actualizaciones** desde el icono de NovaStream. Si hay una versión más nueva para tu equipo, podrás consultar las novedades y elegir **Actualizar y reiniciar**.
+NovaStream Server y NovaStream Player comprueban cada día si hay una versión nueva y te avisan. También puedes pulsar **Buscar actualizaciones** en el menú de cada app. Elige **Actualizar y reiniciar** para instalarla: se descarga, se verifica su suma SHA-256 y se conservan tus datos.
 
-Si vienes de la **0.3.8 o anterior**, instala la **0.3.9** una vez desde [Releases](https://github.com/MitsuriKan255/NovaStream-Downloads/releases). Cierra NovaStream y sustituye `NovaStream.app` en macOS, o `NovaStream.exe` y `runtime` en Windows. Conserva tus carpetas de datos. Cada release incluye `SHA256SUMS.txt` para verificar los ZIP.
+Si vienes de la **0.3.8 o anterior**, descarga e instala la última versión una vez. Cada release incluye `SHA256SUMS.txt` para verificar los archivos.
 
 | Sistema | Datos de la instalación descargable |
 | --- | --- |
