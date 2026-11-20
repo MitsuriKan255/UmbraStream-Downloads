@@ -24,6 +24,16 @@ Para una instalación nueva de macOS, usa **macOS-universal**. La variante **mac
 
 La app incluye el entorno del servidor. Si faltan FFmpeg y FFprobe, el primer arranque descarga y verifica su paquete. Cuando el servidor esté listo, puedes abrir la dirección local desde el menú.
 
+### Si macOS no deja abrir NovaStream
+
+NovaStream no está notarizado por Apple. Al abrirlo por primera vez, macOS puede decir que la app «está dañada» o que «no se puede verificar el desarrollador». Para quitarle la cuarentena, abre **Terminal** y ejecuta este comando, cambiando la ruta por la de tu `NovaStream.app`:
+
+```sh
+xattr -dr com.apple.quarantine /Applications/NovaStream.app
+```
+
+Si no sabes la ruta, escribe `xattr -dr com.apple.quarantine ` (con un espacio al final), arrastra `NovaStream.app` a la ventana de Terminal y pulsa Intro. Después vuelve a abrir NovaStream.
+
 ## Qué incluye
 
 - Fichas con metadatos, imágenes y logotipos. Admite NFO de Jellyfin e imágenes de las carpetas de contenido.
