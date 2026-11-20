@@ -1,74 +1,77 @@
 # NovaStream
 
-![Introducción animada de NovaStream](assets/novastream-intro.png)
+![NovaStream animated intro](assets/novastream-intro.png)
 
-NovaStream es un servidor multimedia personal para organizar y reproducir tus películas, series, música y fotos. Se ejecuta en tu propio equipo y guarda el progreso, los favoritos y las preferencias por cuenta.
+NovaStream is a personal media server to organize and play your movies, TV shows, music and photos. It runs on your own computer and keeps progress, favorites and preferences for each account.
 
-**[Descargar NovaStream](https://github.com/MitsuriKan255/NovaStream-Downloads/releases)** · [Ver novedades](CHANGELOG.md) · [Informar de un problema](https://github.com/MitsuriKan255/NovaStream-Downloads/issues)
+**[Download NovaStream](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest)** · [What's new](https://github.com/MitsuriKan255/NovaStream-Downloads/releases) · [Report a problem](https://github.com/MitsuriKan255/NovaStream-Downloads/issues)
 
-## Elige tu descarga
+## Choose your download
 
-Descarga el instalador de tu sistema. Instala dos apps:
+Download the installer for your system. It installs two apps:
 
-- **NovaStream Server**: el servidor. Organiza tus películas, series, música y fotos y las comparte con tus dispositivos.
-- **NovaStream Player**: la app para ver tu biblioteca sin navegador, en el mismo equipo o en otro.
+- **NovaStream Server**: the server. It organizes your movies, shows, music and photos and shares them with your devices.
+- **NovaStream Player**: the app to watch your library without a browser, on the same computer or another one.
 
-| Sistema | Instalador | Requisitos |
+| System | Installer | Requirements |
 | --- | --- | --- |
-| [macOS](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-macOS.pkg` | Mac con Apple Silicon y macOS 13.5 o posterior. Para Mac con Intel, usa la [0.3.9](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/tag/v0.3.9), su última versión. |
-| [Windows](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-Windows-Setup.exe` | Windows 11 en un equipo x64 con procesador Intel o AMD. |
+| [macOS](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-macOS.pkg` | Mac with Apple Silicon and macOS 13.5 or later. Intel Macs can use [0.3.9](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/tag/v0.3.9), their last version. |
+| [Windows](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-Windows-Setup.exe` | Windows 11 on an x64 PC with an Intel or AMD processor. |
 
-Los archivos ZIP de cada release los usan las actualizaciones automáticas; no hace falta descargarlos.
+The ZIP files in each release are used by the automatic updates; you don't need to download them.
 
-## Instalar
+## Install
 
-1. Abre el instalador y sigue los pasos.
-   - **Mac:** instala NovaStream Server y NovaStream Player en Aplicaciones. Te pedirá la contraseña del Mac.
-   - **Windows:** elige qué instalar. Se instala en tu usuario, sin permisos de administrador, con accesos en el menú Inicio. Si aparece «Windows protegió su PC», pulsa «Más información» y «Ejecutar de todas formas».
-2. Abre **NovaStream Server**, busca su icono en la barra de menús de macOS o junto al reloj en Windows y crea tu cuenta de administrador.
-3. Añade tus carpetas en **Administración → Bibliotecas**. Puedes explorar carpetas del servidor o pegar sus rutas.
-4. Abre **NovaStream Player** para ver tu biblioteca. En el equipo del servidor, **Abrir como app** lo abre ya conectado. En otro equipo, escribe la dirección que aparece en **Administración → General → Acceso desde la red local** e inicia sesión.
+1. Open the installer and follow the steps.
+   - **Mac:** installs NovaStream Server and NovaStream Player in Applications. It asks for your Mac password.
+   - **Windows:** choose what to install. It installs for your user, without administrator rights, with Start menu shortcuts. If you see "Windows protected your PC", click "More info" and "Run anyway".
+2. Open **NovaStream Server**, find its icon in the macOS menu bar or next to the Windows clock, and create your administrator account.
+3. Add your folders in **Administración → Bibliotecas** (Administration → Libraries). You can browse the server's folders or paste their paths.
+4. Open **NovaStream Player** to watch your library. On the server's computer, **Abrir como app** (Open as app) opens it already connected. On another computer, type the address shown in **Administración → General → Acceso desde la red local** (local network access) and sign in.
 
-Si faltan FFmpeg y FFprobe, el primer arranque del servidor descarga y verifica su paquete.
+If FFmpeg and FFprobe are missing, the server downloads and verifies them on first launch.
 
-### Si macOS no deja abrir el instalador o las apps
+The apps' interface is in Spanish.
 
-NovaStream no está notarizado por Apple. Si macOS no deja abrir el instalador, ve a **Ajustes del Sistema → Privacidad y seguridad** y pulsa **Abrir igualmente**. También puedes quitarle la cuarentena desde **Terminal**:
+### If macOS won't open the installer or the apps
+
+NovaStream is not notarized by Apple. If macOS won't open the installer, go to **System Settings → Privacy & Security** and click **Open Anyway**. You can also remove the quarantine flag from **Terminal**:
 
 ```sh
 xattr -d com.apple.quarantine ~/Downloads/NovaStream-*-macOS.pkg
 ```
 
-Si una app dice que «está dañada», quítale la cuarentena igual, cambiando la ruta por la de la app:
+If an app says it "is damaged", remove the quarantine flag the same way, using the app's path:
 
 ```sh
 xattr -dr com.apple.quarantine "/Applications/NovaStream Server.app"
 ```
 
-Si no sabes la ruta, escribe `xattr -dr com.apple.quarantine ` (con un espacio al final), arrastra el archivo a la ventana de Terminal y pulsa Intro.
+If you don't know the path, type `xattr -dr com.apple.quarantine ` (with a trailing space), drag the file into the Terminal window and press Return.
 
-## Qué incluye
+## Features
 
-- Fichas con metadatos, imágenes y logotipos. Admite NFO de Jellyfin e imágenes de las carpetas de contenido.
-- Reproducción directa, selección de pistas y transcodificación con VideoToolbox en macOS, Intel Quick Sync o AMD AMF en Windows.
-- Preferencias por biblioteca, vigilancia de cambios, historial y copias de seguridad.
-- Catálogo, búsqueda, episodios pendientes y reanudación desde la cuenta.
+- Detail pages with metadata, artwork and logos. Supports Jellyfin NFO files and images from your media folders.
+- Direct play, audio and subtitle selection, and transcoding with VideoToolbox on macOS and Intel Quick Sync or AMD AMF on Windows.
+- Per-library settings, folder watching, watch history and backups, including automatic daily backups.
+- Catalog, search, next episodes and resume across devices for each account.
+- Access from other devices on your home network or Tailscale; connections from the internet are always rejected.
 
-Los códecs H.264, HEVC y AV1 y la reproducción a 2160p dependen de las capacidades del equipo, del navegador y del modo de reproducción. El menú **Mostrar logs** y **Administración → Diagnóstico de vídeo** ayudan a comprobarlo.
+H.264, HEVC and AV1 support and 2160p playback depend on your hardware, browser and playback mode. **Mostrar logs** (Show logs) in the server menu and **Administración → Diagnóstico de vídeo** (video diagnostics) help you check them.
 
-## Actualizar
+## Update
 
-NovaStream Server y NovaStream Player comprueban cada día si hay una versión nueva y te avisan. También puedes pulsar **Buscar actualizaciones** en el menú de cada app. Elige **Actualizar y reiniciar** para instalarla: se descarga, se verifica su suma SHA-256 y se conservan tus datos.
+NovaStream Server and NovaStream Player check for a new version every day and let you know. You can also click **Buscar actualizaciones** (Check for updates) in each app's menu. Choose **Actualizar y reiniciar** (Update and restart) to install it: the app downloads it, verifies its SHA-256 checksum and keeps your data.
 
-Si vienes de la **0.3.8 o anterior**, descarga e instala la última versión una vez. Cada release incluye `SHA256SUMS.txt` para verificar los archivos.
+If you're on **0.3.8 or earlier**, download and install the latest version once. Each release includes `SHA256SUMS.txt` to verify the files.
 
-| Sistema | Datos de la instalación descargable |
+| System | Data folder |
 | --- | --- |
 | macOS | `~/Library/Application Support/NovaStream` |
 | Windows | `%LOCALAPPDATA%\NovaStream` |
 
-## Soporte y licencia
+## Support and license
 
-Al informar de un problema, indica tu versión, sistema operativo y los pasos para reproducirlo. Puedes consultar la versión activa en el panel del servidor.
+When you report a problem, include your version, operating system and the steps to reproduce it. You can see the running version in the server dashboard.
 
-Este repositorio contiene la documentación de distribución y las releases de NovaStream. El proyecto se desarrolla en un repositorio privado y se distribuye bajo su [licencia de uso personal](LICENSE). Los componentes de terceros conservan sus licencias.
+This repository contains NovaStream's downloads and release notes. The project is developed in a private repository and distributed under its [personal use license](LICENSE). Third-party components keep their own licenses.
