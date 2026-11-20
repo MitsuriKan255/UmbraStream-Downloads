@@ -10,8 +10,8 @@ NovaStream es un servidor multimedia personal para organizar y reproducir tus pe
 
 | Sistema | Archivo de la release | Requisitos |
 | --- | --- | --- |
-| macOS | `NovaStream-…-macOS-universal.zip` | macOS 13.5 o posterior, Apple Silicon o Intel |
-| Windows | `NovaStream-…-Windows-x64.zip` | Windows 11 en un equipo x64. Edición preliminar. |
+| [macOS](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-macOS-universal.zip` | macOS 13.5 o posterior con Apple Silicon. Para Mac con Intel, usa la [0.3.9](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/tag/v0.3.9), su última versión. |
+| [Windows](https://github.com/MitsuriKan255/NovaStream-Downloads/releases/latest) | `NovaStream-…-Windows-x64.zip` | Windows 11 en un equipo x64 con procesador Intel o AMD. Edición preliminar. |
 
 Para una instalación nueva de macOS, usa **macOS-universal**. La variante **macOS-project-universal** se publica para instalaciones existentes que arrancan desde un proyecto local con su propio archivo `.env`.
 
