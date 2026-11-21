@@ -1,4 +1,6 @@
-# Versiones públicas de NovaStream
+# Versiones públicas de UmbraStream (antes NovaStream)
+
+Desde la 0.6.0 el proyecto se llama UmbraStream. Las notas de cada versión están en las releases.
 
 ## 0.3.9
 
